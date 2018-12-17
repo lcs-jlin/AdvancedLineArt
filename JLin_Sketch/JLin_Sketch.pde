@@ -28,16 +28,16 @@ void setup() {
     float b = 255 - brightness(source.pixels[position]);
     
     // change brightness value (range of 0 to 255) into a diameter of range 1 to 10 
-    float diameter = map(b, 0, 255, 1, 8);
+    float diameter = map(b, 0, 255, 1, 7);
     
     // get the pixel's current position using integer arithmetic, 
     int x = position % width;  
     int y = position / width; 
     
     // draw only an ellipse r some pixels
-    if ((x > 0) && (y > 0) && (y % 8 == 0) && (x % 8 == 0)) {
+    if ((x > 0) && (y > 0) && (y % 7 == 0) && (x % 7 == 0)) {
        // draw an ellipse at position of current pixel
-      ellipse(x, y, diameter, diameter);
+      rect(x, y, diameter, diameter);
     }
    
     
